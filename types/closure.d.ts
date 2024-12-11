@@ -3,7 +3,7 @@
 /**
  * Returns whether the current function was called by the executor.
  */
-declare function checkcaller(): boolean;
+export declare function checkcaller(): boolean;
 
 /**
  * Creates a copy of the given function.
@@ -15,29 +15,29 @@ declare function checkcaller(): boolean;
  * print("Hello, world!"); // Hello, world!!
  * print(copy === print); // false
  */
-declare function clonefunction<T extends Callback>(fn: T): T;
+export declare function clonefunction<T extends Callback>(fn: T): T;
 /**
  * @alias clonefunction
  * @hidden
  */
-declare const clonefunc: typeof clonefunction | undefined;
+export declare const clonefunc: typeof clonefunction | undefined;
 
 /**
  * Returns the script that is running the current function.
  */
-declare function getcallingscript(): LocalScript | ModuleScript;
+export declare function getcallingscript(): LocalScript | ModuleScript;
 
 /**
  * Generates a new closure based on the script's bytecode.
  * @param object The script to generate a closure for.
  * @returns A closure generated from the script's bytecode.
  */
-declare function getscriptclosure(object: LocalScript | ModuleScript): Callback;
+export declare function getscriptclosure(object: LocalScript | ModuleScript): Callback;
 /**
  * @alias getscriptclosure
  * @hidden
  */
-declare const getscriptfunction: typeof getscriptclosure | undefined;
+export declare const getscriptfunction: typeof getscriptclosure | undefined;
 
 /**
  * Hooks `stub` to `fn`, where calls to `fn` will be redirected to `stub`.
@@ -54,12 +54,12 @@ declare const getscriptfunction: typeof getscriptclosure | undefined;
  * print("Hello, world!"); // Warns "Hello, world!"
  * backup("Hello, world!"); // Prints "Hello, world!"
  */
-declare function hookfunction<T extends Callback>(fn: T, stub: Callback): T;
+export declare function hookfunction<T extends Callback>(fn: T, stub: Callback): T;
 /**
  * @alias hookfunction
  * @hidden
  */
-declare const replaceclosure: typeof hookfunction | undefined;
+export declare const replaceclosure: typeof hookfunction | undefined;
 
 /**
  * Returns whether `fn` is a C closure.
@@ -68,7 +68,7 @@ declare const replaceclosure: typeof hookfunction | undefined;
  * print(iscclosure(print)); // true
  * print(iscclosure(() => {})); // false
  */
-declare function iscclosure(fn: Callback): boolean;
+export declare function iscclosure(fn: Callback): boolean;
 
 /**
  * Returns whether `fn` is a function created by the executor.
@@ -77,17 +77,17 @@ declare function iscclosure(fn: Callback): boolean;
  * print(iscclosure(print)); // false
  * print(iscclosure(() => {})); // true
  */
-declare function isexecutorclosure(fn: Callback): boolean;
+export declare function isexecutorclosure(fn: Callback): boolean;
 /**
  * @alias isexecutorclosure
  * @hidden
  */
-declare const checkclosure: typeof isexecutorclosure | undefined;
+export declare const checkclosure: typeof isexecutorclosure | undefined;
 /**
  * @alias isexecutorclosure
  * @hidden
  */
-declare const isourclosure: typeof isexecutorclosure | undefined;
+export declare const isourclosure: typeof isexecutorclosure | undefined;
 
 /**
  * Returns whether `fn` is a Lua closure.
@@ -96,7 +96,7 @@ declare const isourclosure: typeof isexecutorclosure | undefined;
  * print(iscclosure(print)); // false
  * print(iscclosure(() => {})); // true
  */
-declare function islclosure(fn: Callback): boolean;
+export declare function islclosure(fn: Callback): boolean;
 
 /**
  * Gets a chunk using the Luau code in `source`. Returns the compiled function.
@@ -119,7 +119,7 @@ declare function islclosure(fn: Callback): boolean;
  *
  * @see https://www.lua.org/manual/5.1/manual.html#pdf-loadstring
  */
-declare function loadstring<T extends Callback = Callback>(
+export declare function loadstring<T extends Callback = Callback>(
 	source: string,
 	chunkname?: string,
 ): LuaTuple<[T, undefined] | [undefined, string]>;
@@ -139,4 +139,4 @@ declare function loadstring<T extends Callback = Callback>(
  * print(iscclosure(myFunction)); // false
  * print(iscclosure(myCClosure)); // true
  */
-declare function newcclosure<T extends Callback>(fn: T): T;
+export declare function newcclosure<T extends Callback>(fn: T): T;

@@ -1,6 +1,6 @@
 // https://github.com/unified-naming-convention/NamingStandard/tree/main/api/metatable
 
-type LuaMetatableFull<T> = LuaMetatable<T> & {
+export type LuaMetatableFull<T> = LuaMetatable<T> & {
 	__type?: string;
 	__namecall?: (self: T, ...args: Array<unknown>) => void;
 };
@@ -14,7 +14,7 @@ type LuaMetatableFull<T> = LuaMetatable<T> & {
  * const metatable = getrawmetatable(game);
  * const index = metatable.__index;
  */
-declare function getrawmetatable<T>(object: T): LuaMetatableFull<T>;
+export declare function getrawmetatable<T>(object: T): LuaMetatableFull<T>;
 
 /**
  * Hooks `stub` to the given object's metamethod. Returns the original
@@ -31,7 +31,7 @@ declare function getrawmetatable<T>(object: T): LuaMetatableFull<T>;
  * 	return internal.__namecall!(self, ...args);
  * });
  */
-declare function hookmetamethod<T, K extends keyof LuaMetatableFull<T>>(
+export declare function hookmetamethod<T, K extends keyof LuaMetatableFull<T>>(
 	object: T,
 	metamethod: K,
 	stub: Required<LuaMetatableFull<T>>[K],
@@ -42,7 +42,7 @@ declare function hookmetamethod<T, K extends keyof LuaMetatableFull<T>>(
  * @param object The object to check.
  * @returns Whether `object` is frozen.
  */
-declare function isreadonly(object: unknown): boolean;
+export declare function isreadonly(object: unknown): boolean;
 
 /**
  * Sets the metatable of `object` to `metatable` without triggering the
@@ -60,7 +60,7 @@ declare function isreadonly(object: unknown): boolean;
  * 	__newindex: metatable.__newindex,
  * });
  */
-declare function setrawmetatable<T>(object: T, metatable: LuaMetatableFull<T>): void;
+export declare function setrawmetatable<T>(object: T, metatable: LuaMetatableFull<T>): void;
 
 /**
  * Sets whether `object` is frozen or read-only.
@@ -72,4 +72,4 @@ declare function setrawmetatable<T>(object: T, metatable: LuaMetatableFull<T>): 
  * setreadonly(metatable, false);
  * metatable.__index = (...args) => index(...args);
  */
-declare function setreadonly(object: unknown, readonly: boolean): void;
+export declare function setreadonly(object: unknown, readonly: boolean): void;

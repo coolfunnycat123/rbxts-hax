@@ -9,9 +9,9 @@
  * @param fn A Lua function or the stack level.
  * @param environment The new environment.
  */
-declare function setfenv<T extends number | Callback>(fn: T, environment: object): T extends 0 ? undefined : T;
+export declare function setfenv<T extends number | Callback>(fn: T, environment: object): T extends 0 ? undefined : T;
 
-interface DataModel {
+export interface DataModel {
 	/**
 	 * Sends a HTTP GET request to the given URL and returns the response body.
 	 */

@@ -3,12 +3,12 @@
 // This is really messy. Function names from the documentation will be treated
 // as best practice.
 
-type HashAlgorithm = "sha1" | "sha384" | "sha512" | "md5" | "sha256" | "sha3-224" | "sha3-256" | "sha3-512";
+export type HashAlgorithm = "sha1" | "sha384" | "sha512" | "md5" | "sha256" | "sha3-224" | "sha3-256" | "sha3-512";
 
 /**
  * Handles data encryption and decryption.
  */
-declare namespace crypt {
+export declare namespace crypt {
 	/**
 	 * Base64 encryption and decryption.
 	 */
@@ -98,7 +98,7 @@ declare namespace crypt {
  * Handles base64 encryption and decryption.
  * @hidden
  */
-declare const base64:
+export declare const base64:
 	| {
 			/**
 			 * @alias crypt.base64decode
@@ -115,9 +115,9 @@ declare const base64:
 /**
  * @alias crypt.base64decode
  */
-declare const base64_decode: typeof crypt.base64decode | undefined;
+export declare const base64_decode: typeof crypt.base64decode | undefined;
 
 /**
  * @alias crypt.base64encode
  */
-declare const base64_encode: typeof crypt.base64encode | undefined;
+export declare const base64_encode: typeof crypt.base64encode | undefined;

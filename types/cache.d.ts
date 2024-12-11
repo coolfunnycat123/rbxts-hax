@@ -3,7 +3,7 @@
 /**
  * Handles references to Roblox instances in the cache.
  */
-declare namespace cache {
+export declare namespace cache {
 	/**
 	 * Invalidates `object` in the instance cache.
 	 * @param object The Roblox instance to invalidate.

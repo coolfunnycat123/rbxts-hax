@@ -1,6 +1,6 @@
 // https://github.com/unified-naming-convention/NamingStandard/tree/main/api/websockets
 
-interface WebSocketEvent<T extends Callback> {
+export interface WebSocketEvent<T extends Callback> {
 	// TODO: Check if event connections are missing documentation
 	Connect(callback: T): void;
 }
@@ -13,7 +13,7 @@ interface WebSocketEvent<T extends Callback> {
  * socket.OnClose.Connect(() => print("Websocket closed"));
  * socket.Send("Hello, world!");
  */
-interface WebSocket {
+export interface WebSocket {
 	/**
 	 * Sends a message to the server.
 	 * @param message The message to send.
@@ -38,7 +38,7 @@ interface WebSocket {
 	OnMessage: WebSocketEvent<(message: string) => void>;
 }
 
-interface WebSocketConstructor {
+export interface WebSocketConstructor {
 	/**
 	 * Attempts to connect to the given websocket URL.
 	 * @param url The URL to connect to.
@@ -60,4 +60,4 @@ interface WebSocketConstructor {
  * socket.OnClose.Connect(() => print("Websocket closed"));
  * socket.Send("Hello, world!");
  */
-declare const WebSocket: WebSocketConstructor;
+export declare const WebSocket: WebSocketConstructor;

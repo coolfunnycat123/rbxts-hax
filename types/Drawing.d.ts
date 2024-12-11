@@ -2,7 +2,7 @@
 
 // Drawing library
 
-interface Drawings {
+export interface Drawings {
 	Line: DrawingLine;
 	Text: DrawingText;
 	Image: DrawingImage;
@@ -12,7 +12,7 @@ interface Drawings {
 	Triangle: DrawingTriangle;
 }
 
-interface DrawingConstructor {
+export interface DrawingConstructor {
 	/**
 	 * Creates a new drawing of type `drawingType`.
 	 */
@@ -41,12 +41,12 @@ interface DrawingConstructor {
  * circle.Transparency = 0.9;
  * circle.Destroy();
  */
-declare const Drawing: DrawingConstructor;
+export declare const Drawing: DrawingConstructor;
 
 /**
  * The base class for all drawings. Cannot be instantiated directly.
  */
-interface Drawing {
+export interface Drawing {
 	Visible: boolean;
 	ZIndex: number;
 	Transparency: number;
@@ -60,7 +60,7 @@ interface Drawing {
 /**
  * Draws a line from `From` to `To`.
  */
-interface DrawingLine extends Drawing {
+export interface DrawingLine extends Drawing {
 	Thickness: number;
 	From: Vector2;
 	To: Vector2;
@@ -69,7 +69,7 @@ interface DrawingLine extends Drawing {
 /**
  * Renders text to the screen.
  */
-interface DrawingText extends Drawing {
+export interface DrawingText extends Drawing {
 	Text: string;
 	readonly TextBounds: Vector2;
 	Size: number;
@@ -83,7 +83,7 @@ interface DrawingText extends Drawing {
 /**
  * Renders an image to the screen. Set `Data` to the image data, **not a URL!**
  */
-interface DrawingImage extends Drawing {
+export interface DrawingImage extends Drawing {
 	Data: string;
 	Size: Vector2;
 	Position: Vector2;
@@ -96,7 +96,7 @@ interface DrawingImage extends Drawing {
  * **NOTE:** Circles are not drawn perfectly; the more "sides" rendered, the
  * greater the performance hit.
  */
-interface DrawingCircle extends Drawing {
+export interface DrawingCircle extends Drawing {
 	Thickness: number;
 	NumSides: number;
 	Radius: number;
@@ -107,7 +107,7 @@ interface DrawingCircle extends Drawing {
 /**
  * Draws a square starting at `Position` and ending at `Position + Size`.
  */
-interface DrawingSquare extends Drawing {
+export interface DrawingSquare extends Drawing {
 	Thickness: number;
 	Size: Vector2;
 	Position: Vector2;
@@ -117,7 +117,7 @@ interface DrawingSquare extends Drawing {
 /**
  * Draws a quadrilateral with the given points.
  */
-interface DrawingQuad extends Drawing {
+export interface DrawingQuad extends Drawing {
 	Thickness: number;
 	PointA: Vector2;
 	PointB: Vector2;
@@ -129,7 +129,7 @@ interface DrawingQuad extends Drawing {
 /**
  * Draws a triangle with the given points.
  */
-interface DrawingTriangle extends Drawing {
+export interface DrawingTriangle extends Drawing {
 	Thickness: number;
 	PointA: Vector2;
 	PointB: Vector2;
@@ -142,7 +142,7 @@ interface DrawingTriangle extends Drawing {
 /**
  * Clears all Drawings from the screen. Invalidates all references to pre-existing Drawing objects.
  */
-declare function cleardrawcache(): void;
+export declare function cleardrawcache(): void;
 
 /**
  * Gets the value of a Drawing's property. Invokes `__index`.
@@ -153,14 +153,14 @@ declare function cleardrawcache(): void;
  * const circle = new Drawing("Circle");
  * getrenderproperty(circle, "Position"); // Vector2
  */
-declare function getrenderproperty<T extends Drawing, K extends keyof T>(drawing: T, property: K): T[K];
+export declare function getrenderproperty<T extends Drawing, K extends keyof T>(drawing: T, property: K): T[K];
 
 /**
  * Returns whether `object` is a valid Drawing.
  * @param object The object to check.
  * @returns Whether `object` is a valid Drawing.
  */
-declare function isrenderobj(object: unknown): object is Drawing;
+export declare function isrenderobj(object: unknown): object is Drawing;
 
 /**
  * Sets the value of a Drawing's property to `value`. Invokes `__newindex`.
@@ -171,4 +171,4 @@ declare function isrenderobj(object: unknown): object is Drawing;
  * const circle = new Drawing("Circle");
  * setrenderproperty(circle, "Position", new Vector2());
  */
-declare function setrenderproperty<T extends Drawing, K extends keyof T>(drawing: T, property: K, value: T[K]): void;
+export declare function setrenderproperty<T extends Drawing, K extends keyof T>(drawing: T, property: K, value: T[K]): void;

@@ -10,7 +10,7 @@
  * const clickDetector = game.GetService("Workspace").Part.ClickDetector;
  * fireclickdetector(clickDetector, 50, "MouseClick");
  */
-declare function fireclickdetector(
+export declare function fireclickdetector(
 	detector: ClickDetector,
 	distance?: number,
 	event?: "MouseClick" | "RightMouseClick" | "MouseHoverEnter" | "MouseHoverLeave",
@@ -28,12 +28,12 @@ declare function fireclickdetector(
  * print(remote.OnClientInvoke()); // Throws an error
  * print(getcallbackvalue(remote, "OnClientInvoke")!()); // Prints "Hello, world!"
  */
-declare function getcallbackvalue<T extends Instance, K extends keyof T>(object: T, property: K): T[K];
+export declare function getcallbackvalue<T extends Instance, K extends keyof T>(object: T, property: K): T[K];
 /**
  * @alias getcallbackvalue
  * @hidden
  */
-declare const getcallbackmember: typeof getcallbackvalue | undefined;
+export declare const getcallbackmember: typeof getcallbackvalue | undefined;
 
 /**
  * Returns the content and hash of the `PhysicalConfigData` of the given union.
@@ -41,11 +41,11 @@ declare const getcallbackmember: typeof getcallbackvalue | undefined;
  * @param object The union to get the physical config data from.
  * @returns The content and hash string.
  */
-declare function getphysicalconfigdata(object: UnionOperation): LuaTuple<[string, string]>;
+export declare function getphysicalconfigdata(object: UnionOperation): LuaTuple<[string, string]>;
 
 /**
  * Sets Roblox Studio's clipboard to the given model data. This allows data
  * from the game to be pasted directly into Roblox Studio.
  * @param data The model data to set the clipboard to.
  */
-declare function setrbxclipboard(data: string): void;
+export declare function setrbxclipboard(data: string): void;

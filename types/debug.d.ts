@@ -1,6 +1,6 @@
 // https://github.com/unified-naming-convention/NamingStandard/tree/main/api/debug
 
-interface ChunkInfo {
+export interface ChunkInfo {
 	source: string;
 	what: string;
 	numparams: number;
@@ -12,7 +12,7 @@ interface ChunkInfo {
 	name: string;
 }
 
-declare namespace debug {
+export declare namespace debug {
 	/**
 	 * Returns the constant at index `index` in the function or level `fn`.
 	 * @param fn The function or level to look up.

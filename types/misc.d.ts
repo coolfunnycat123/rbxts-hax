@@ -16,25 +16,25 @@
  * const image = new Instance("ImageLabel");
  * image.Image = getcustomasset("files/face.png");
  */
-declare function getcustomasset(file: string, preventcache?: boolean): string;
+export declare function getcustomasset(file: string, preventcache?: boolean): string;
 
 /**
  * Returns the name and version of the current executor.
  * @returns The name and version.
  */
-declare function identifyexecutor(): LuaTuple<[string, string]>;
+export declare function identifyexecutor(): LuaTuple<[string, string]>;
 /**
  * @alias identifyexecutor
  * @hidden
  */
-declare const getexecutorname: typeof identifyexecutor | undefined;
+export declare const getexecutorname: typeof identifyexecutor | undefined;
 
 /**
  * Compresses the given string using the LZ4 compression algorithm.
  * @param string The string to compress.
  * @returns The compressed string.
  */
-declare function lz4compress(string: string): string;
+export declare function lz4compress(string: string): string;
 
 /**
  * Decompresses the given string using the LZ4 compression algorithm, with the
@@ -43,7 +43,7 @@ declare function lz4compress(string: string): string;
  * @param size The size of the original string.
  * @returns The decompressed string.
  */
-declare function lz4decompress(string: string, size: number): string;
+export declare function lz4decompress(string: string, size: number): string;
 
 /**
  * Creates a message box with the given text and caption. Yields until the
@@ -57,19 +57,19 @@ declare function lz4decompress(string: string, size: number): string;
  * @param flags The flag integer.
  * @returns The user input integer.
  */
-declare function messagebox(text: string, caption: string, flags: number): number;
+export declare function messagebox(text: string, caption: string, flags: number): number;
 
 /**
  * Queues the given script to execute after a successful TeleportService
  * teleport.
  * @param script The script to execute.
  */
-declare function queue_on_teleport(script: string): void;
+export declare function queue_on_teleport(script: string): void;
 /**
  * @alias queue_on_teleport
  * @hidden
  */
-declare const queueonteleport: typeof queue_on_teleport | undefined;
+export declare const queueonteleport: typeof queue_on_teleport | undefined;
 
 /**
  * Creates an HTTP request using the given options. Yields until the request
@@ -92,27 +92,27 @@ declare const queueonteleport: typeof queue_on_teleport | undefined;
  * @example
  * request({ Method: "GET", Url: "https://example.com" });
  */
-declare function request(options: RequestAsyncRequest): RequestAsyncResponse;
+export declare function request(options: RequestAsyncRequest): RequestAsyncResponse;
 /**
  * @alias request
  * @hidden
  */
-declare const http_request: typeof request | undefined;
+export declare const http_request: typeof request | undefined;
 
 /**
  * Copies the given text to the clipboard.
  * @param text The text to copy.
  */
-declare function setclipboard(text: string): void;
+export declare function setclipboard(text: string): void;
 /**
  * @alias setclipboard
  * @hidden
  */
-declare const toclipboard: typeof setclipboard | undefined;
+export declare const toclipboard: typeof setclipboard | undefined;
 
 /**
  * Sets the in-game FPS cap to `frames`. Setting this to `0` will disable the
  * FPS cap.
  * @param frames The FPS cap.
  */
-declare function setfpscap(frames: number): void;
+export declare function setfpscap(frames: number): void;
